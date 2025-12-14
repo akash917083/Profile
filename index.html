@@ -4,241 +4,214 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Portfolio | Akash</title>
+
 <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f2f5;
-        color: #333;
-    }
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    padding:0;
+    background:#f0f2f5;
+    color:#333;
+}
 
-    /* ----- Header ----- */
-    header {
-        background-color: #0056b3;
-        color: white;
-        padding: 30px 0;
-        text-align: center;
-    }
+header{
+    background:#0056b3;
+    color:#fff;
+    padding:30px 0;
+    text-align:center;
+}
 
-    /* Fade-slide animation for AKASH and Aspiring line */
-    .fade-slide {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1.2s ease forwards;
-    }
+.fade-slide{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeInUp 1.2s ease forwards;
+}
 
-    .fade-slide2 {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1.2s ease forwards;
-        animation-delay: 0.3s;
-    }
+.fade-slide2{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeInUp 1.2s ease forwards;
+    animation-delay:.3s;
+}
 
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeInUp{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
 
-    /* ----- Navbar / Menu ----- */
-    nav {
-        text-align: center;
-        margin: 20px 0;
-    }
+.container{
+    width:85%;
+    max-width:1000px;
+    margin:30px auto;
+    padding:25px;
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
 
-    nav ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-    }
+section{
+    padding:25px 0;
+    border-bottom:1px solid #e0e0e0;
+}
+section:last-child{border-bottom:none}
 
-    nav ul li a {
-        text-decoration: none;
-        color: #0056b3;
-        font-weight: bold;
-        font-size: 18px;
-        position: relative;
-        transition: 0.3s;
-        padding: 5px 0;
-    }
+h2{
+    color:#0056b3;
+    border-bottom:3px solid #007bff;
+    padding-bottom:8px;
+    margin-bottom:20px;
+    font-size:1.8em;
+}
 
-    /* Hover wave/underline effect */
-    nav ul li a:hover {
-        transform: scale(1.08);
-        color: #007bff;
-    }
+h2 span{
+    transition:.3s;
+    display:inline-block;
+}
+h2 span:hover{
+    color:#007bff;
+    transform:scale(1.05);
+}
 
-    nav ul li a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 0%;
-        height: 2px;
-        background: #007bff;
-        border-radius: 50px;
-        transition: 0.35s ease;
-    }
+ul{line-height:1.6}
 
-    nav ul li a:hover::after {
-        width: 100%;
-    }
+a{
+    color:#0056b3;
+    text-decoration:none;
+}
+a:hover{text-decoration:underline}
 
-    /* ----- Container ----- */
-    .container {
-        width: 85%;
-        max-width: 1000px;
-        margin: 30px auto;
-        padding: 25px;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
+/* Skills hover effect */
+.skills-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-    section {
-        padding: 25px 0;
-        border-bottom: 1px solid #e0e0e0;
-    }
+.skills-list li {
+    background-color: #e6f7ff;
+    color: #0056b3;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid #b3d9ff;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    cursor: pointer;
+}
 
-    section:last-child {
-        border-bottom: none;
-    }
+.skills-list li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
 
-    /* Headings hover effect (only text, not hr) */
-    h2 {
-        color: #0056b3;
-        border-bottom: 3px solid #007bff;
-        padding-bottom: 8px;
-        margin-bottom: 20px;
-        font-size: 1.8em;
-        transition: 0.3s;
-    }
-
-    h2 span {
-        display: inline-block;
-        transition: 0.3s;
-    }
-
-    h2 span:hover {
-        color: #007bff;
-        transform: scale(1.05);
-    }
-
-    ul {
-        line-height: 1.6;
-        margin: 10px 0;
-    }
-
-    /* Skills list hover effect */
-    .skills-list ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .skills-list li {
-        background-color: #e6f7ff;
-        color: #0056b3;
-        padding: 10px 18px;
-        border-radius: 20px;
-        font-weight: bold;
-        border: 1px solid #b3d9ff;
-        transition: transform 160ms ease, box-shadow 160ms ease;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-        cursor: pointer;
-    }
-
-    .skills-list li:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-    }
-
-    a {
-        color: #0056b3;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px 0;
-        background-color: #333;
-        color: white;
-        margin-top: 30px;
-        font-size: 0.9em;
-    }
+footer{
+    text-align:center;
+    padding:20px 0;
+    background:#333;
+    color:#fff;
+    margin-top:30px;
+    font-size:.9em;
+}
 </style>
 </head>
+
 <body>
 
-    <header>
-        <h1 class="fade-slide">Akash</h1>
-        <p class="fade-slide2">Aspiring Web Developer & Analytical Thinker</p>
-    </header>
+<header>
+    <h1 class="fade-slide">Akash</h1>
+    <p class="fade-slide2">Aspiring Web Developer & Analytical Thinker</p>
+</header>
 
-    <div class="container">
-        
-        <section id="about">
-            <h2><span>👤 About Me</span></h2>
-            <p>Hello! My name is Akash. I am currently pursuing my Bachelor of Science (BSc) degree from Allahabad State University, expected to complete in 2026. I am passionate about web development and enjoy building responsive, user-friendly interfaces using HTML, CSS, and JavaScript. I like learning new tools and improving my problem-solving skills through small projects and practice.</p>
-            <h3>Hobbies and Interests</h3>
-            <ul>
-                <li>🏏 Playing and watching <strong>Cricket</strong> (teaches teamwork and strategy).</li>
-                <li>🎮 Enjoying <strong>Online Games</strong> (helps with quick decision-making).</li>
-                <li>🛌 Prioritizing <strong>Sleep</strong> (essential for recharging and focus).</li>
-            </ul>
-        </section>
+<div class="container">
 
-        <section id="skills">
-            <h2><span>🛠️ Skills & Expertise</span></h2>
-            <div class="skills-list">
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>MS Office (Word, Excel, PowerPoint)</li>
-                    <li>Typing Proficiency</li>
-                    <li>Data Entry</li>
-                </ul>
-            </div>
-        </section>
+<!-- ABOUT -->
+<section id="about">
+<h2><span>👤 About Me</span></h2>
+<p>
+Hello! My name is Akash. I am currently pursuing my Bachelor of Science (BSc) degree from Allahabad State University, expected to complete in 2026.  
+I am passionate about web development and enjoy creating responsive, user-friendly websites using HTML, CSS, and JavaScript.  
+I am a quick learner and continuously work on improving my technical and problem-solving skills through practice and real projects.
+</p>
 
-        <section id="contact">
-            <h2><span>📞 Contact</span></h2>
-            <p>Whether you have a project idea or just want to connect, feel free to reach out:</p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:akash917083@gmail.com">Mail Me</a></li>
-                <li><strong>Instagram:</strong> <a href="https://www.instagram.com/__rishi_gautam__/" target="_blank" rel="noopener noreferrer">Dm Me</a></li>
-            </ul>
-        </section>
+<h3>Hobbies and Interests</h3>
+<ul>
+    <li>🏏 Playing and watching <strong>Cricket</strong></li>
+    <li>🎮 Playing <strong>Online Games</strong></li>
+    <li>🛌 Maintaining proper <strong>Sleep & Discipline</strong></li>
+</ul>
+</section>
 
-        <section id="projects">
-            <h2><span>🎨 Projects / Portfolio</span></h2>
-            <p>Below are some of the key projects I have built, demonstrating my web development skills and technical capabilities. All projects utilize HTML, CSS, and JavaScript.</p>
-            
-            <div class="project-list">
-                <h3>Project Title 1: Website</h3>
-                <p>This project is a web page built using HTML, CSS, and JavaScript.</p>
-                <ul>
-                    <li><strong>Key Skills:</strong> Semantic HTML, Mobile-First Design, CSS Layout Techniques</li>
-                    <li><strong>Live Link:</strong> <a href="https://akash917083.github.io/Ping-Computer-Centre/" target="_blank" rel="noopener noreferrer">View Project (Live Demo)</a></li>
-                    <li><strong>Source Code:</strong> <a href="https://github.com/akash917083/Ping-Computer-Centre" target="_blank" rel="noopener noreferrer">View Code (GitHub)</a></li>
-                </ul>
-            </div>
-        </section>
+<!-- SKILLS -->
+<section id="skills">
+<h2><span>🛠️ Skills & Expertise</span></h2>
+<div class="skills-list">
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>MS Office</li>
+        <li>Typing</li>
+        <li>Data Entry</li>
+    </ul>
+</div>
+</section>
 
-    </div>
+<!-- PROJECTS -->
+<section id="projects">
+<h2><span>🎨 Projects / Portfolio</span></h2>
 
-    <footer>
-        <p>&copy; 2025 Akash. All Rights Reserved.</p>
-    </footer>
+<!-- PROJECT 1 (NEW GYM SITE) -->
+<h3>Project 1: Gym Website</h3>
+<p>
+A professional gym website featuring modern UI, animations, responsive design, and an online membership form integrated with Formspree.
+</p>
+<ul>
+    <li>
+        <strong>Live Link:</strong>
+        <a href="https://akash917083.github.io/GYM/" target="_blank">View Project(Live Demo)</a>
+    </li>
+    <li>
+        <strong>Source Code:</strong>
+        <a href="https://github.com/akash917083/GYM.git" target="_blank">View Code(Github)</a>
+    </li>
+</ul>
+
+<!-- PROJECT 2 (OLD PROJECT) -->
+<h3>Project 2: Computer Centre Website</h3>
+<p>
+A responsive computer training centre website built using HTML, CSS, and JavaScript.
+</p>
+<ul>
+    <li>
+        <strong>Live Link:</strong>
+        <a href="https://akash917083.github.io/Ping-Computer-Centre/" target="_blank">View Project(Live Demo)</a>
+    </li>
+    <li>
+        <strong>Source Code:</strong>
+        <a href="https://github.com/akash917083/Ping-Computer-Centre" target="_blank">View Code(Github)</a>
+    </li>
+</ul>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2><span>📞 Contact</span></h2>
+<ul>
+    <li><strong>Email:</strong> <a href="mailto:akash917083@gmail.com">Mail Me</a></li>
+    <li><strong>Instagram:</strong>
+        <a href="https://www.instagram.com/__rishi_gautam__/" target="_blank">@DM Me</a>
+    </li>
+</ul>
+</section>
+
+</div>
+
+<footer>
+<p>&copy; 2025 Akash. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
-
